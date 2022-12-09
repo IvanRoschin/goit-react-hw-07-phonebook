@@ -10,8 +10,14 @@ export const ContactList = () => {
       {data ? (
         <table>{<ContactItem contacts={data} />}</table>
       ) : (
-        `<p>Your contactlist is empty</p>`
+        <p>Your contactlist is empty</p>
       )}
+
+      {/* {data ? (
+        <table>{<ContactItem contacts={data} />}</table>
+      ) : (
+        `<p>Your contactlist is empty</p>`
+      )} */}
     </>
   );
 };

@@ -1,4 +1,5 @@
 import { useAddContactMutation } from 'redux/contactSlice';
+import { useFetchContactsQuery } from 'redux/contactSlice';
 // import Loader from 'components/Loader';
 
 import {
@@ -10,33 +11,29 @@ import {
 } from './ContactForm.styled';
 
 export const ContactForm = () => {
+  const { data: contacts } = useFetchContactsQuery();
   const [addContact, { isLoading }] = useAddContactMutation();
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
     const name = form.name.value;
-    const phone = form.phone.value;
-    console.log('name: ', name);
-    console.log('phone: ', phone);
-    addContact(name, phone);
-    // const isExist = contacts.find(
-    //   contact => contact.name === name || contact.number === number
-    // );
+    const phone = form.number.value;
 
-    // if (isExist) {
-    //   alert(`${name} is already in contacts.`);
-    //   form.reset();
-    //   return;
-    // }
-    // const newContact = {
-    //   id: nanoid(),
-    //   name,
-    //   number,
-    // };
+    const isExist = contacts.find(contact => contact.name === name);
 
-    // dispatch(addContact(newContact));
-    // alert(`${name} is added to Phonebook.`);
+    if (isExist) {
+      alert(`${name} is already in contacts.`);
+      form.reset();
+      return;
+    }
+    const newContact = {
+      name,
+      phone,
+    };
+    addContact(newContact);
+
+    alert(`${name} is added to Phonebook.`);
     form.reset();
   };
   return (
@@ -54,7 +51,7 @@ export const ContactForm = () => {
         <InputName>Number</InputName>
         <Input
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required

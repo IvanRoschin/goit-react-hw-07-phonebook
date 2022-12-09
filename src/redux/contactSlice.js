@@ -12,7 +12,7 @@ export const contactsApi = createApi({
       providesTags: ['contacts'],
     }),
     addContact: builder.mutation({
-      query: (name, phone) => ({
+      query: ({ name, phone }) => ({
         url: '/contacts',
         method: 'POST',
         body: {
