@@ -1,7 +1,6 @@
-import { Form as FormikForm, Field as FormikField } from 'formik';
 import styled from 'styled-components';
 
-export const Form = styled(FormikForm)`
+export const Form = styled.form`
   width: 400px;
   align-items: center;
   padding: ${p => p.theme.space[6]}px ${p => p.theme.space[5]}px;
@@ -22,7 +21,7 @@ export const InputName = styled.p`
   color: ${p => p.theme.colors.text};
 `;
 
-export const Field = styled(FormikField)`
+export const Input = styled.input`
   width: 100%;
   border-color: ${p => p.theme.colors.border};
   margin-bottom: ${p => p.theme.space[6]}px;
@@ -52,10 +51,4 @@ export const AddContactBtn = styled.button`
     background: ${p => p.theme.colors.white};
     border-color: ${p => p.theme.colors.primary};
   }
-`;
-export const ErrorMessageCustom = styled.span`
-  font-weight: ${p => p.theme.fontWeights.bold};
-  font-family: ${p => p.theme.fonts.monospace};
-  font-size: ${p => p.theme.fontSizes.s};
-  color: ${p => p.theme.colors.red};
 `;

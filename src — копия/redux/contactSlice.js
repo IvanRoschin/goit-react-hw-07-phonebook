@@ -11,6 +11,15 @@ export const contactsApi = createApi({
       query: () => `/contacts`,
       providesTags: ['contacts'],
     }),
+    // addContact: builder.mutation({
+    //   query: ({ name, phone }) => ({
+    //     url: '/contacts',
+    //     method: 'POST',
+    //     body: {
+    //       name: name,
+    //       phone: phone,
+    //     },
+    //   }),
     addContact: builder.mutation({
       query: values => ({
         url: '/contacts',
@@ -29,6 +38,8 @@ export const contactsApi = createApi({
   }),
 });
 
+// Export hooks for usage in functional components, which are
+// auto-generated based on the defined endpoints
 export const {
   useFetchContactsQuery,
   useAddContactMutation,

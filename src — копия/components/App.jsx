@@ -1,4 +1,5 @@
-import { ContactFilter } from './ContactFilter/ContactFilter';
+// import { ContactFilter } from './ContactFilter/ContactFilter';
+import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 
 import {
@@ -8,7 +9,6 @@ import {
   TagLineBox,
   ContactFormBox,
 } from './App.styled';
-import { ContactComponent } from './AddContact/AddContact';
 
 export const App = () => {
   return (
@@ -17,11 +17,11 @@ export const App = () => {
       <TagLineBox>
         <ContactFormBox>
           <ContactsTitle>Contact form</ContactsTitle>
-          <ContactComponent />
+          <ContactForm />
         </ContactFormBox>
         <div>
           <ContactsTitle>Contacts List</ContactsTitle>
-          <ContactFilter />
+          {/* <ContactFilter /> */}
           <ContactList />
         </div>
       </TagLineBox>
