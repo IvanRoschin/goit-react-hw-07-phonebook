@@ -6,7 +6,7 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 // import Loader from 'components/Loader';
 import { toast } from 'react-toastify';
 
-export const ContactComponent = () => {
+const ContactComponent = () => {
   const [addContact] = useAddContactMutation();
   const { data: contacts } = useFetchContactsQuery();
 
@@ -33,3 +33,5 @@ export const ContactComponent = () => {
     </>
   );
 };
+
+export default ContactComponent;

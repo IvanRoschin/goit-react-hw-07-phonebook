@@ -8,7 +8,6 @@ export const Spinner = styled.div`
 `;
 
 export const LoadingText = styled.p`
-  font-size: ${p => p.theme.fontSizes.l};
   font-weight: ${p => p.theme.fontWeights.normal};
   text-transform: lowercase;
 `;

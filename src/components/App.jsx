@@ -1,5 +1,6 @@
 import { ContactFilter } from './ContactFilter/ContactFilter';
-import { ContactList } from './ContactList/ContactList';
+import { ContactList } from './ContactList';
+import { ContactComponent } from './AddContact';
 
 import {
   Container,
@@ -8,7 +9,6 @@ import {
   TagLineBox,
   ContactFormBox,
 } from './App.styled';
-import { ContactComponent } from './AddContact/AddContact';
 
 export const App = () => {
   return (

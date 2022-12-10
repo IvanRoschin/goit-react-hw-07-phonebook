@@ -7,7 +7,7 @@ export default function ImagesPendungView() {
         strokeColor="#3f51b5"
         strokeWidth="3"
         animationDuration="0.75"
-        width="42"
+        width="24"
         visible={true}
       />
       <LoadingText>Loading...</LoadingText>
