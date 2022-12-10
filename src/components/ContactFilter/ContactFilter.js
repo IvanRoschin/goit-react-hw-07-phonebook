@@ -1,19 +1,19 @@
-import { useAddFilterMutation } from 'redux/filterSlice';
 import { DebounceInput } from 'react-debounce-input';
-
+import { useDispatch } from 'react-redux';
+import { setFilter } from 'redux/filterSlice';
 import { FilterContainer, Filterlabel } from './ContactFilter.styled';
 
 export const ContactFilter = () => {
-  const [addFilter] = useAddFilterMutation();
+  const dispatch = useDispatch();
   const handleSearch = e => {
-    addFilter(e.target.value);
+    dispatch(setFilter(e.target.value));
   };
   return (
     <FilterContainer>
       <Filterlabel>Find contacts by name</Filterlabel>
       <DebounceInput
         minLength={2}
-        debounceTimeout={600}
+        debounceTimeout={300}
         onChange={handleSearch}
       />
     </FilterContainer>
