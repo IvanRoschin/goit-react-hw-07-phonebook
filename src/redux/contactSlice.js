@@ -9,6 +9,7 @@ export const contactsApi = createApi({
   endpoints: builder => ({
     fetchContacts: builder.query({
       query: () => `/contacts`,
+
       providesTags: ['contacts'],
     }),
     getContactById: builder.query({
@@ -31,10 +32,10 @@ export const contactsApi = createApi({
       invalidatesTags: ['contacts'],
     }),
     updateContact: builder.mutation({
-      query: fields => ({
-        url: `/contacts/${fields.id}`,
+      query: ({ id, ...patch }) => ({
+        url: `/contacts/${id}`,
         method: 'PUT',
-        body: fields,
+        body: patch,
       }),
       invalidatesTags: ['contacts'],
     }),

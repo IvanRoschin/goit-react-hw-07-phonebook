@@ -19,11 +19,6 @@ export const ContactItem = ({ contacts }) => {
             <td>{name}</td>
             <td>{phone}</td>
             <td>
-              <DeleteBtn type="button" onClick={null}>
-                update
-              </DeleteBtn>
-            </td>
-            <td>
               <DeleteBtn
                 type="button"
                 disabled={isDeleting}
