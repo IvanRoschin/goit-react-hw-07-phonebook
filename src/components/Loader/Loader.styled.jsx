@@ -10,4 +10,6 @@ export const Spinner = styled.div`
 export const LoadingText = styled.p`
   font-weight: ${p => p.theme.fontWeights.normal};
   text-transform: lowercase;
+  margin: 0;
+  margin-left: 10px;
 `;

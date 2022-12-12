@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const DeleteBtn = styled.button`
+export const Btn = styled.button`
   padding: ${p => p.theme.space[3]}px;
   text-align: center;
   text-transform: uppercase;

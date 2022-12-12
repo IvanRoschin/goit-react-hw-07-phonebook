@@ -28,7 +28,7 @@ const ContactList = () => {
       {isFetching ? (
         <Loader />
       ) : (
-        <table>{<ContactItem contacts={filtredContacts()} />}</table>
+        <div>{<ContactItem contacts={filtredContacts()} />}</div>
       )}
     </>
   );
