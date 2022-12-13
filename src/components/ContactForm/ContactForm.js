@@ -42,7 +42,7 @@ export const ContactForm = ({
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <Form>
+        <Form autoComplete="false">
           <Label>
             <InputName>Name</InputName>
             <ErrorMessage name="name" component="span">
