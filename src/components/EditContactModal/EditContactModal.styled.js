@@ -13,6 +13,7 @@ export const Overlay = styled.div`
 `;
 
 export const Modal = styled.div`
+  position: relative;
   padding: 24px;
   background-color: #fff;
 `;
@@ -24,3 +25,38 @@ export const Title = styled.h2`
   font-weight: ${p => p.theme.fontWeights.normal};
   text-align: center;
 `;
+
+export const ModalCloseBtn = styled.button`
+ display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+
+    width: 20px;
+    height: 20px;
+   
+    border-radius: 50%;
+    box-shadow: 0px 6px 6px 0px var(--button-bg-cl);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--main-bg-cl);
+
+    font-size: 16px;
+    color: var(--main-text-cl);
+
+    transition: all 250ms linear;
+
+    &:focus,
+    &:hover {
+        background-color: var(--button-bg-cl);
+        border: 1px solid transparent;
+        fill: var(--main-bg-cl);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)`;
+
+//     //  export const modalClosIcon.styled {
+//     // width: 12px;
+//     // height: 12px;
+// }

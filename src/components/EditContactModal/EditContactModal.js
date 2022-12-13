@@ -1,5 +1,12 @@
 import { ContactForm } from 'components/ContactForm/ContactForm';
-import { Overlay, Modal, Title } from './EditContactModal.styled';
+import {
+  Overlay,
+  Modal,
+  Title,
+  ModalCloseBtn,
+} from './EditContactModal.styled';
+import { RxCross1 } from 'react-icons/rx';
+
 import {
   useGetContactByIdQuery,
   useUpdateContactMutation,
@@ -30,10 +37,9 @@ export const EditContactModal = ({ closeModal, id }) => {
             onSubmit={handleUpdateContact}
           />
         )}
-
-        <button type="button" onClick={handleCloseModal}>
-          Close
-        </button>
+        <ModalCloseBtn type="button" onClick={handleCloseModal}>
+          <RxCross1 size={32} />
+        </ModalCloseBtn>
       </Modal>
     </Overlay>
   );
